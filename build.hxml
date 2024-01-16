@@ -1,2 +1,2 @@
--cpp CringeCompiler
---main CringeCompiler.hx
+-cpp stwiderr
+--main Stwiderr.hx

@@ -3,7 +3,7 @@ import haxe.Exception;
 import haxe.io.Bytes;
 import sys.thread.*;
 
-class CringeCompiler {
+class Stwiderr {
     static var mode:Bool = false;
     static var text:String;
     static var entry:String = "";
@@ -21,7 +21,7 @@ class CringeCompiler {
 			else entry += Sys.args()[i] + " ";
 		}
 		
-        Sys.println("\x1b[1;41mCringeCompiler active\x1b[0m");
+        Sys.println("\x1b[1;41mstwiderr active\x1b[0m");
         //Sys.println(entry);
 		var proc:Process = new Process(entry);
         var outLock = new Lock();
@@ -97,7 +97,7 @@ class CringeCompiler {
                 Sys.command('twurl set default yourUserName yourApiKey');
                 Sys.command('twurl -q -d "status=' + text + '" "/1.1/statuses/update.json"');
                 //Sys.println('twurl -q -d "status=' + text + '" "/1.1/statuses/update.json"');
-                Sys.println("Posted to Twitter. Cringe!");
+                Sys.println("Posted to Twitter.");
                 Sys.exit(exitCode);
             }
 		}
